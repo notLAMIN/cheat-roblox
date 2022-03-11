@@ -1,0 +1,64 @@
+    local lcpl = game.Players.LocalPlayer
+		local screengui = Instance.new("ScreenGui", lcpl.PlayerGui)
+		screengui.Name = "nikitagui"
+		local text = Instance.new("TextLabel", lcpl.PlayerGui.nikitagui)
+		text.Text = "Cheat actived"
+		text.TextColor3 = Color3.new(255, 0, 0)
+		text.Font = "TitilliumWeb"
+		text.TextSize = 25
+		text.BackgroundTransparency = 1
+		text.AnchorPoint = Vector2.new(1, 0)
+		text.Position = UDim2.new(0.9, 0, 0.9, 0)
+
+		local textboxspeed = Instance.new("TextBox", lcpl.PlayerGui.nikitagui)
+		textboxspeed.Name = "SpeedBox"
+		textboxspeed.BackgroundColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+		textboxspeed.BorderColor3 = Color3.new(0, 0, 0)
+		textboxspeed.Size = UDim2.new(0.085, 0, 0.04, 0)
+		textboxspeed.Position = UDim2.new(0.05, 0, 0.08, 0)
+		textboxspeed.TextColor3 = Color3.new(0, 255, 0)
+		textboxspeed.PlaceholderColor3 = Color3.new(0, 255, 0)
+		textboxspeed.Text = "Speed..."
+		textboxspeed.BorderSizePixel = 3
+
+		local textbuttonspeed = Instance.new("TextButton", lcpl.PlayerGui.nikitagui)
+		textbuttonspeed.Name = "SpeedBox"
+		textbuttonspeed.BackgroundColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+		textbuttonspeed.BorderColor3 = Color3.new(0, 0, 0)
+		textbuttonspeed.Size = UDim2.new(0.085, 0, 0.04, 0)
+		textbuttonspeed.Position = UDim2.new(0.05, 0, 0.12, 0)
+		textbuttonspeed.TextColor3 = Color3.new(0, 255, 0)
+		textbuttonspeed.Text = "Enter"
+		textbuttonspeed.BorderSizePixel = 3
+
+textbuttonspeed.MouseButton1Click:Connect(function()
+	if tonumber(textboxspeed.Text) > 0 and tonumber(textboxspeed.Text) <= 100 then
+		lcpl.Character.Humanoid.WalkSpeed = tonumber(textboxspeed.Text)
+	else
+		textboxspeed.Text = "error"
+		wait(2)
+		textboxspeed.Text = "Speed..."
+	end
+	
+
+end)
+
+
+while wait(0.5) do
+	for i, childrik in ipairs(workspace:GetDescendants()) do
+		if childrik:FindFirstChild("Humanoid") then
+			if not childrik:FindFirstChild("EspBox") then
+				if childrik ~= game.Players.LocalPlayer.Character then
+					local esp = Instance.new("BoxHandleAdornment",childrik)
+					esp.Adornee = childrik
+					esp.ZIndex = 0
+					esp.Size = Vector3.new(1, 5, 1)
+					esp.Transparency = 0.65
+					esp.Color3 = Color3.fromRGB(0,255,0)
+					esp.AlwaysOnTop = true
+					esp.Name = "EspBox"
+				end
+			end
+		end
+	end	
+end
