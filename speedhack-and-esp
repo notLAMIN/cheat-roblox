@@ -14,6 +14,7 @@
 		textboxspeed.Name = "SpeedBox"
 		textboxspeed.BackgroundColor3 = Color3.new(0.105882, 0.164706, 0.207843)
 		textboxspeed.BorderColor3 = Color3.new(0, 0, 0)
+		textboxspeed.BackgroundTransparency = 0.6
 		textboxspeed.Size = UDim2.new(0.085, 0, 0.04, 0)
 		textboxspeed.Position = UDim2.new(0.05, 0, 0.08, 0)
 		textboxspeed.TextColor3 = Color3.new(0, 255, 0)
@@ -25,6 +26,7 @@
 		textbuttonspeed.Name = "SpeedBox"
 		textbuttonspeed.BackgroundColor3 = Color3.new(0.105882, 0.164706, 0.207843)
 		textbuttonspeed.BorderColor3 = Color3.new(0, 0, 0)
+		textbuttonspeed.BackgroundTransparency = 0.6
 		textbuttonspeed.Size = UDim2.new(0.085, 0, 0.04, 0)
 		textbuttonspeed.Position = UDim2.new(0.05, 0, 0.12, 0)
 		textbuttonspeed.TextColor3 = Color3.new(0, 255, 0)
